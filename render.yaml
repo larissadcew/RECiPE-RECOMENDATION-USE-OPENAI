@@ -1,8 +1,6 @@
 services:
   - type: web
-    name: recipe-recommendation-app
+    name: my-streamlit-app
     env: python
-    buildCommand: |
-      .\env\Scripts\Activate.ps1 && pip install -r requirements.txt
-    startCommand: |
-      .\env\Scripts\Activate.ps1 && streamlit run app.py
+    buildCommand: .\env\Scripts\Activate.ps1; pip install -r requirements.txt
+    startCommand: .\env\Scripts\Activate.ps1; streamlit run app.py
