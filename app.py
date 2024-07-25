@@ -1,9 +1,15 @@
 import streamlit as st
 from langchain_community.llms import OpenAI
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Retrieve API key from environment variable
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 st.title('GeekCook ???? || Recipe Recommendation System')
-
-openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 def generate_recommendations(input_text):
     try:
@@ -18,6 +24,6 @@ with st.form('my_form'):
     user_input = st.text_area('Enter your preferred ingredients (separated by commas):')
     submitted = st.form_submit_button('Get Recipe Recommendations')
 
-if submitted and openai_api_key.startswith('sk-'):
+if submitted:
     recommended_recipe = generate_recommendations(user_input)
     st.info(recommended_recipe)
