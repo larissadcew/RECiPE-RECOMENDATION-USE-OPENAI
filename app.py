@@ -3,10 +3,8 @@ from langchain_community.llms import OpenAI
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
 load_dotenv()
 
-# Retrieve API key from environment variable
 openai_api_key = os.getenv('OPENAI_API_KEY')
 
 st.title('GeekCook ???? || Recipe Recommendation System')
