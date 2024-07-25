@@ -1,4 +1,4 @@
 streamlit
 openai
 langchain_community
-python-dotenv
+python-dotenv==1.0.1
